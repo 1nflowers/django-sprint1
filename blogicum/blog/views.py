@@ -60,6 +60,8 @@ def post_detail(request, id):
 
 
 def category_posts(request, category_slug):
+    category_posts_list = [p for p in posts if p['category'] == category_slug]
     template = 'blog/category.html'
-    context = {'category_slug': category_slug}
+    context = {'category_slug': category_slug,
+               'posts': category_posts_list}
     return render(request, template, context)
