@@ -1,21 +1,16 @@
 {% extends 'base.html' %}
 
-<title>
-{{ post.location }}. {{ post.date }}
-</title>
-{% include 'includes/not_active.html' %}
+<title>{{ post.location }}. {{ post.date }}</title>
 
 {% block content %}
-  
-    <article>
-      <ul>
-        <li>Место: {{ post.location }}</li>
-        <li>Дата: {{ post.date }}</li>
-        <li>
-          Категория: <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
-        </li>
-      </ul>
-      <p>{{ post.text|linebreaksbr }}</p>
-    </article>
-
+  <article>
+    <ul>
+      <li>Место: {{ post.location }}</li>
+      <li>Дата: {{ post.date }}</li>
+      <li>
+        Категория: <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
+      </li>
+    </ul>
+    <p>{{ post.text|linebreaksbr }}</p>
+  </article>
 {% endblock %}
