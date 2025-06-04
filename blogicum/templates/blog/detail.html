@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
-<!-- Формируется из локации и даты -->
-<title>{{ post.location }} {{ post.date }}</title>
+
+<title>
+{{ post.location }}. {{ post.date }}
+</title>
 {% include 'includes/not_active.html' %}
+
 {% block content %}
-  <div class="container py-5">
+  
     <article>
       <ul>
         <li>Место: {{ post.location }}</li>
@@ -14,5 +17,5 @@
       </ul>
       <p>{{ post.text|linebreaksbr }}</p>
     </article>
-  </div>
+
 {% endblock %}
