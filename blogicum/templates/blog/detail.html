@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
-<title>{{ post.location }}. {{ post.date }}</title>
+{% block title %}
+  {{ post.location }}. {{ post.date }}
+{% endblock %}
 
 {% block content %}
   <article>
